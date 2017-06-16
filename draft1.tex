@@ -1,0 +1,51 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in,includefoot]{geometry}
+
+\begin{document}
+
+\section{Introduction}
+
+\begin{enumerate}
+
+\item Observation 
+
+The field of exoplanet research has been expanding rapidly in the recent decade, enabled by the progress of observation in terms of sheer quantity and quality. Transiting and radial velocity emerge as the main workhorse, having been used in tandem to calculate the orbital and structural features of these exoplanets. Complementarily, Transmission and emission spectroscopy provide the useful constraint of the temperature profile and atmospheric composition (Heng \& Showman 2015). Observables related to the dynamics like the brightness distribution (Knutson et al. 2007) and preliminary insight about wind speed in the atmospherere from the blueshift of CO line (Snell et al. 2010) have also been found. On top of that, new instruments such as the soon be available James Webb Space Telescope will provide more important constraints, make theoretical study of exoplanet atmospheric circulation more credible and attractive. 
+
+\item Hot Jupiter
+
+Among the exoplanets, hot Jupiter type is of particular interest because of their distinct characteristics. They are gas giant presided in close proximity with their star (within $\sim$ 0.1 AU), enabling transit observation much easier due to geometry. Also, the second eclipse depth is more visible because of the hot atmosphere. 
+
+The close distance to the central star make the irradiation on hot Jupiter unusually high. This intensive stellar irradiation renders their atmosphere dynamic and vibrant. A distinct radiative layer is thus formed atop convective interiors and drives atmospheric wind to unusual high speed. On top of that, being tidal locked - the rotation period is equal to orbital period, which is often the case, leading to permanent day side and night side. Such asymmetric heating drives strong wind for heat redistrubution. 
+
+Overall, the thermal and and dynamical responses to the unusual high thermal forcing make hot Jupiter atmosphere unique and intrigueing for theoretical study.
+
+\item Hydrodynamical model
+
+To date, atmospheric circulation of hot Jupiter has been modeled by several groups with ongoing development (Showman \& Guillot 2002, Showman et al. 2008, Dobbs-Dixon \& Lin 2008, Rauscher \& Menou 2010, Heng et al. 2011, Fromang et al. 2016) Some robust and consistent results were  prominent in these Global Circulation Models (GCM) such as the transonic wind speed and most notably is the broad eastward equatorial zonal jet near the photosphere. This zonal wind often flow with the velocity of order few kilometer per second, which is larger than speed of sound by a factor of a few. With this zonal wind, the brightest spot are predicted to be advected eastward of the substellar point (Showman \& Guillot 2002) which was subsequently confirmed by observation (Knutson et al. 2007). The wind whose speed of $1km \ s^{-1}$ is also detected by blueshift of CO, although the process is still preliminary (Snell et al. 2010). 
+
+Analytical approach also catch up with the numerical study. Following the work of Matsuno (1966) and Gill (1980), Showman \& Polvani (2010, 2011) had laid a theoretical basis for the circulation of Hot Jupiter, which explained the fast equatorial zonal jet. The authors concluded that the thermal-forcing standing planetary-scale Rossby wave and Kelvin wave are responsible for transporting the angular momentum equatorward and up-gradient from the high-latitude region, which are in turn balanced by the drag and vertical momentum transport. This result is subsequently extended into a more complete three-dimentional theory by Tsai, Dobbs-Dixon and Gu (2014). The fragmented physics piece of hot jupiter atmosphere is being elucidated and assembled.
+
+\item Inflated hot Jupiter problem
+
+Nonetheless, details of the picture when closely examined are still missing  (see Heng \& Showman 2014 for a comprehensive review). One of which is the inflated hot Jupiter  problem. It has been observed that hot Jupiter appear to have larger radii when they are more irradiated (Baraffe, Chabrier \& Barman 2010). Most proposed explanation require an interior power source that would contribute to the radiated heat from gravitational contraction to reach a thermal equilibrium with a larger radius. 
+Some proposed mechanism are the dynamical deposition of heat vertically inward via waves or advection (Guillot \& Showman 2002), tidal heating (Bodenheimer et al. 2001, 2003) and Ohmic dissipation, first clearly stated by Batygin \& Stevenson (2010).  
+
+%5
+\item MHD effect on the atmosphere
+
+In strongly-irradiated atmosphere, the temperature ~ 1000 - 3000k in the upper atmosphere is not sufficient to ionize H or He significantly but high enough to paritally ionize alkali metals such as Na and K. If the planet possesses a magnetic field, it will resist the motion advected perpendicular to the field line, turning part of the kinectic energy into heat. Therefore magnetic field are speculated to leave at least 2 major inprints on the picture of atmospheric circulation. First, the magnetic field could slow down the zonal wind, reducing the thermal transportation efficiency from the dayside to night side. Second, induced current generated by the magnetic field effect on the fast zonal flow is a heat source.  This source could be the missing heating mechanism behind the inflated radii (Batygin \& Stevenson 2010). Whether it works out in detail remains a topic of debate. 
+
+
+\item Others' works
+
+To date, some works have been published to attack the problem. Perna et al. (2010a,b) adopt a kinematic approach by treating the Lorentz force as a rayleigh drag which is a velocity-dependent force opposing the flow. This Lorentz force is estimated from the induced current and a precribed dipole magnetic field. The Ohmic heating power could be evaluated from the dissipation by this drag force. Rauscher \& Menou (2013) improved this model by adding the self-consistent spatial variation of the electrical conductivity, thereby to the Lorentz force. The results show a significant decrease around ~ 30 \% in peak-velocity of the zonal flow, which could be important in hindering the formation efficiency of shock. This is a logical first step to address the problem. However, by the nature of this treatment, the general struture of the flow is largely unchanged from the hydrodynamical model. Although this might be true physically, the reverse also remains possible - the case that the simplified Lorentz force in these dragged 3D GCMs could not capture the essence of the magnetic effect. 
+
+Specifically, in these prescription, the feedback of the flow onto the magnetic field is not properly considered, which means that the induced field by the current is neglected. This approach is only valid when magnetic Reynolds number $\leq$ 1 ($R_m = UL/\eta$, where  $U$ is a typical speed and $L$ is typical length scale and $\eta$ is the magnetic diffusitivity). This is often not true in the Hot jupiter atmospheres.
+
+A full self-consistently MHD treatment is indeed needed. Batygin, Stanley \& Setevenson (2013) and Rogers \& Showman (2014) make a step forward when they solve a set of MHD equations, however, with compromise. The former group utilizes Bussinesq approximation, which essentially renders their model 2-dimensional and Ohmic heating is not included; Anelastic approximation and non-self-consistent magnetic resitivity are used in the latter paper. Both approximations cannot handle properly the supersonic flow. The purpose of this work is to overcome these challenges by solving a full compressible self-consistent MHD equations. 
+
+\end{enumerate}
+
+
+\end{document}
