@@ -1,21 +1,25 @@
 \documentclass[11pt]{article}
-
+\usepackage{amsmath}
 \usepackage{graphicx}
 \graphicspath{{images/}}
 \usepackage[margin=1in,includefoot]{geometry}
 \usepackage{physics}
 \usepackage{bm}
+\usepackage{natbib}
+\usepackage{float}
 \begin{document}
+\bibliographystyle{apalike}
+
 
 \section{Introduction}
 
-\begin{enumerate}
 
-\item Observations 
+\subsection{Observations}
+  
 
-The field of exoplanet research has been expanding rapidly in the recent decade, enabled by the progress of observation in terms of quantity and quality. Transit observation and radial velocity measurement emerge as the main workhorse, having been used in tandem to calculate the orbital and structural features of these exoplanets. In addition, transmission and emission spectroscopy provide a useful constraint on the temperature profile and tthe atmospheric composition (Heng \& Showman 2015). Observables related to the dynamics like the brightness distribution (Knutson et al. 2007) and preliminary insight about wind speed in the atmospherere from the blueshift of CO line (Snellen et al. 2010) have also been found. On top of that, new instruments such as the James Webb Space Telescope will soon provide more constraints, making theoretical study of exoplanet atmospheric circulation more credible and attractive. 
+The field of exoplanet research has been expanding rapidly in the recent decade, enabled by the progress of observation in terms of quantity and quality. Transit observation and radial velocity measurement emerge as the main workhorse, having been used in tandem to calculate the orbital and structural features of these exoplanets. In addition, transmission and emission spectroscopy provide a useful constraint on the temperature profile and the atmospheric composition  \citep{HengShowman2015}. Observables related to the dynamics like the brightness distribution \citep{knutson2007map} and preliminary insight about wind speed in the atmospherere from the blueshift of CO line \citep{snellen2010orbital} have also been found. On top of that, new instruments such as the James Webb Space Telescope will soon provide more constraints, making theoretical study of exoplanet atmospheric circulation more credible and attractive. 
 
-\item Hot Jupiter
+\subsection{Hot Jupiter}
 
 Among the exoplanets, hot Jupiters are of particular interest because of their distinct characteristics. They are gas giants located close to their star (within $\sim$ 0.1 AU - where AU is Astronomical Unit denoting the Earth-Sun distance), enabling transit observation much easier due to geometry. Also, the secondary eclipse depth is more visible because of the hot atmosphere.  The transit method measures the diminution of brightness when then planet passing in front of the star and the secondary eclipse method measures the change when it passes behind.
 
@@ -23,35 +27,33 @@ The close distance to the central star makes the irradiation on hot Jupiter unus
 
 Overall, the thermal and and dynamical responses to the unusual high thermal forcing make hot Jupiter atmosphere unique and intriguing for theoretical study.
 
-\item Inflated hot Jupiter problem
+\subsection{Inflated hot Jupiter problem}
 
-Many aspects of hot Jupiter characteristics are still poorly understood (see Heng \& Showman 2014 for a comprehensive review). One of which is the inflated hot Jupiter  problem. It has been observed that hot Jupiters appear to have larger radii when they are more irradiated (Baraffe, Chabrier \& Barman 2010). Most proposed explanation require an interior power source that would add up to the radiated heat from gravitational contraction to reach a thermal equilibrium with a larger radius. 
-Some proposed mechanism are the dynamical deposition of heat vertically inward via waves or advection (Guillot \& Showman 2002), tidal heating (Bodenheimer et al. 2001, 2003) and Ohmic dissipation, first clearly stated by Batygin \& Stevenson (2010).  
+Many aspects of hot Jupiter characteristics are still poorly understood (see Heng \& Showman 2014 for a comprehensive review). One of which is the inflated hot Jupiter  problem. It has been observed that hot Jupiters appear to have larger radii when they are more irradiated \citep{baraffe2009physical}. Most proposed explanation require an interior power source that would add up to the radiated heat from gravitational contraction to reach a thermal equilibrium with a larger radius. 
+Some proposed mechanism are the dynamical deposition of heat vertically inward via waves or advection \citep{showman2002atmospheric}, tidal heating \citep{bodenheimer2001tidal, bodenheimer2003radii} and Ohmic dissipation, first clearly stated by \citet*{batygin2010inflating}
 
-\item Hydrodynamical models
+\subsection{Hydrodynamical models}
 
-To date, the atmospheric circulation of hot Jupiter has been modeled by several groups (Showman \& Guillot 2002, Showman et al. 2008, Dobbs-Dixon \& Lin 2008, Rauscher \& Menou 2010, Heng et al. 2011, Fromang et al. 2016). Some robust and consistent results were  prominent in these Global Circulation Models (GCM) such as the presence of transonic wind speed and most notably a broad eastward equatorial zonal jet near the photosphere. This zonal wind flows with a velocity of the order of a few kilometers per second, which is larger than the speed of sound by a factor of a few. With this zonal wind, the brightest spot was predicted to be advected eastward of the substellar point (Showman \& Guillot 2002) which was subsequently confirmed by observations (Knutson et al. 2007).  Wind whose speed of $1km.s^ {-1}$ has also been tentatively reported by blueshift of CO lines, although the detection should be taken with caution. (Snellen et al. 2010). 
+To date, the atmospheric circulation of hot Jupiter has been modeled by several groups (\cite{showman2002atmospheric},\cite{showman2008atmospheric}, \cite{dobbs2008atmospheric}, \cite{rauscher2010three}, \cite{heng2011atmospheric}, \cite{fromang2016shear}). Some robust and consistent results were  prominent in these Global Circulation Models (GCM) such as the presence of transonic wind speed and most notably a broad eastward equatorial zonal jet near the photosphere. This zonal wind flows with a velocity of the order of a few kilometers per second, which is larger than the speed of sound by a factor of a few. With this zonal wind, the brightest spot was predicted to be advected eastward of the substellar point \citep{showman2002atmospheric} which was subsequently confirmed by observations (Knutson et al. 2007).  Wind whose speed of $1km.s^ {-1}$ has also been tentatively reported by blueshift of CO lines, although the detection should be taken with caution \citep{snellen2010orbital}. 
 
-Analytical approaches also catch up with the numerical study. Following the work of Matsuno (1966) and Gill (1980), Showman \& Polvani (2010, 2011) had laid a theoretical basis for the atmospheric circulation of Hot Jupiters, which explained the fast equatorial zonal jet. The authors concluded that the thermally-forced standing planetary-scale Rossby wave and Kelvin waves are responsible for transporting angular momentum equatorward and up-gradient from the high-latitude region, which is in turn balanced by the drag and vertical momentum transport. This result was subsequently extended into a more complete three-dimentional theory by Tsai, Dobbs-Dixon and Gu (2014). The fragmented physics pieces of hot jupiter atmosphere is being elucidated and assembled.
+Analytical approaches also catch up with the numerical study. Following the work of \citet*{matsuno1966}and \citet*{gill1980}, \citet*{showman2010,showman2011} had laid a theoretical basis for the atmospheric circulation of Hot Jupiters, which explained the fast equatorial zonal jet. The authors concluded that the thermally-forced standing planetary-scale Rossby wave and Kelvin waves are responsible for transporting angular momentum equatorward and up-gradient from the high-latitude region, which is in turn balanced by the drag and vertical momentum transport. This result was subsequently extended into a more complete three-dimentional theory by \citet*{tsai2014}. The fragmented physics pieces of hot jupiter atmosphere is being elucidated and assembled.
 
-\item MHD effect on the atmosphere
+\subsection{MHD effect on the atmosphere}
 
-In strongly-irradiated atmosphere, the temperature $\sim$ 1000 - 3000 K in the upper atmosphere is not sufficient to ionize H or He significantly but high enough to paritally ionize alkali metals such as Na and K. If the planet possesses a magnetic field, it will resist the motion advected perpendicular to the field line, turning part of the kinectic energy into heat. Therefore magnetic field have been speculated to leave at least two major effects on the picture of atmospheric circulation. First, they could slow down the zonal wind, reducing the thermal transport efficiency from the day side to night side. Second, the magnetic field could dissipates the kinetic energy into heat. This heat source has been suggested as the missing heating mechanism behind the inflated radii (Batygin \& Stevenson 2010). Whether it works out or not remains a topic of debate and is the subject of this report.
+In strongly-irradiated atmosphere, the temperature $\sim$ 1000 - 3000 K in the upper atmosphere is not sufficient to ionize H or He significantly but high enough to paritally ionize alkali metals such as Na and K. If the planet possesses a magnetic field, it will resist the motion advected perpendicular to the field line, turning part of the kinectic energy into heat. Therefore magnetic field have been speculated to leave at least two major effects on the picture of atmospheric circulation. First, they could slow down the zonal wind, reducing the thermal transport efficiency from the day side to night side. Second, the magnetic field could dissipates the kinetic energy into heat. This heat source has been suggested as the missing heating mechanism behind the inflated radii \citep{batygin2010inflating}. Whether it works out or not remains a topic of debate and is the subject of this report.
 
 
-\item Review of the literature
+\subsection{Review of the literature}
 
-To date, several papers have been published to attack the problem. Perna et al. (2010a,b) and Rauscher \& Menou (2013) modelled the effect of magnetic field as a rayleigh drag which is a velocity-dependent force opposing the flow. This drag is included in a pre-existing hydrodynamical model (Rauscher \& Menou 2010). The Ohmic heating could be evaluated from the dissipation by this drag force. The results show a significant decrease  of $\sim$ 30 \% of the peak velocity of the zonal flow, which could be important in hindering the formation efficiency of shock. This is a logical first step to address the problem. However, due to the nature of this treatment, the general structure of the flow is largely unchanged compared to the purely hydrodynamical model. Although this might be true physically, the reverse also remains possible - the case that the simplified Lorentz force in these dragged 3D GCMs may not be adaquate to capture the essence of the magnetic effect. 
+To date, several papers have been published to attack the problem. \citet*{perna2010a,perna2010b} and \citet*{rauscher2013} modelled the effect of magnetic field as a rayleigh drag which is a velocity-dependent force opposing the flow. This drag is included in a pre-existing hydrodynamical model \citep{rauscher2010three}. The Ohmic heating could be evaluated from the dissipation by this drag force. The results show a significant decrease  of $\sim$ 30 \% of the peak velocity of the zonal flow, which could be important in hindering the formation efficiency of shock. This is a logical first step to address the problem. However, due to the nature of this treatment, the general structure of the flow is largely unchanged compared to the purely hydrodynamical model. Although this might be true physically, the reverse also remains possible - the case that the simplified Lorentz force in these dragged 3D GCMs may not be adaquate to capture the essence of the magnetic effect. 
 
-In these prescription, the feedback of the flow onto the magnetic field is not properly considered. This approach is only valid for magnetic Reynolds number $\leq$ 1 ($R_m = UL/\eta$, where  $U$ is a typical speed and $L$ is typical length scale and $\eta$ is the magnetic diffusitivity). This is often not true in the Hot jupiter atmospheres. A full self-consistently MHD treatment is indeed needed. Batygin, Stanley \& Setevenson (2013) and Rogers \& Showman (2014) make a step forward by solving a set of MHD equations. However, they also make strong hypothesis. The former group utilizes Bussinesq approximation, which essentially renders their model 2-dimensional and Ohmic heating is not included. Anelastic approximation and non-self-consistent magnetic resitivity are used in the latter paper. Both approximations cannot handle properly the supersonic flow, which raises questions about their results. Importantly, the conclusions reached by the two groups are not in agreement. While the former show that Ohmic heating could explain the inflated hot Jupiter problem, the latter demonstrated otherwise. Therefore, a third independent inquiry is indeed needed. 
+In these prescription, the feedback of the flow onto the magnetic field is not properly considered. This approach is only valid for magnetic Reynolds number $\leq$ 1 ($R_m = UL/\eta$, where  $U$ is a typical speed and $L$ is typical length scale and $\eta$ is the magnetic diffusitivity). This is often not true in the Hot jupiter atmospheres. A full self-consistently MHD treatment is indeed needed. \citet*{batygin2013} and \citet*{rogers2014} make a step forward by solving a set of MHD equations. However, they also make strong hypothesis. The former group utilizes Bussinesq approximation, which essentially renders their model 2-dimensional and Ohmic heating is not included. Anelastic approximation and non-self-consistent magnetic resitivity are used in the latter paper. Both approximations cannot handle properly the supersonic flow, which raises questions about their results. Importantly, the conclusions reached by the two groups are not in agreement. While the former show that Ohmic heating could explain the inflated hot Jupiter problem, the latter demonstrated otherwise. Therefore, a third independent inquiry is indeed needed. 
 
 The purpose of this work is to overcome these challenges by solving a full compressible self-consistent MHD equations. 
 
-\end{enumerate}
 
 \section{Models and Numerical Implementation }
-\begin{enumerate}
-\item The governing equations
+\subsection{The governing equations}
 
 As opposed to other other common GCMs, we solved the set of magnetohydrodynamical equations in a Cartesian coordinate system. Our domain mimics the equatorial band in a traditional GCM in a  sense that the z-axis represents the radial direction, y expresses the latitudes and x implies longitudes. 
 Our grid extends over the range [ $-L_x/2$, $L_x/2$], [$-L_y/2$, $L_y/2$] and [0, $L_z$] in x, y and z directions respectively.
@@ -86,7 +88,7 @@ where $\mathcal{R}$ is the specific gas constant, whose numerical value is taken
 
 The equation (1) represents the continuity equation. The equation (2) represents the conservation of momentum including the Lorentz force.  Equation (3) represents the energy conservation equation with a ohmic heating term. Equation (4) is the induction equation (see Sect. 2.3)
 
-\item Numerical Implementation 
+\subsection{Numerical Implementation}
 
 We use the finite-volume scheme RAMSES, which is based on the Godunov method (Toro 1997). Finite volume methods conserves the total energy of the gas, that is the sum of the kinetic and thermal energy. This means that even in the absence of explicit viscosity, part of kinetic energy will be numerically dissipated into heat.
 %, which would be the case in a turbulent flow. 
@@ -99,7 +101,7 @@ The numerical implementation for purely hydrodynamical model was benchmarked by 
 
 We initially run a purely hydrodynamic model for 100 planet days and then add an uniform magnetic field directed along y-axis, which is meant to mimic the dipolar field of the planet. Two cases are studied here: a "linear model" with vanishingly small magnetic field for which the inital $B_y \approx 10^{-9} G$  and a model with strong field for which initial $B_y \approx 5G $. The former is to investigate the impact of the flow on the magnetic field while neglecting the feedback of the field on the flow. Because of stability of the code, the sponge and buffer layer have to be utilizied in the latter case while the "linear model" is spared.
 
-\item The induction equation + lorentz force 
+\subsection{The induction equation + lorentz force} 
 
 Equation (4) is better described as the advection-diffusion equation of magnetic field and should be put in a more descriptive form: 
 
@@ -110,7 +112,8 @@ Equation (4) is better described as the advection-diffusion equation of magnetic
 Where $\bm{v}\bm{B}$ and $\bm{B}\bm{v}$, which are tranpose of each other, are dyadic product of $\bm{B}$ and $\bm{v}$. The second term on the left side depicts the transport of magnetic field due to advection of the flow while the first term on the right side should be thought of as a source of $\bm{B}$ due to the shear of velocity. The magnetic diffusion is contained in the right-most term.  The heat equation is sometimes treated as an effective analogy with equation (5), for heat advects and diffuses in a similar manner. The main difference is that while heat can not be negative, there is no such constraint for magnetic field. Therefore, reconnection should be considered as an additional, and in many cases, effective sink. 
 
 Lorentz force: TBD
-\item Naive models
+
+\subsection{Naive models}
 
 If one component of magnetic field is  considered, we have:
 \begin{equation}
@@ -155,33 +158,74 @@ This model have several assumptions: Time scale is long enough so we have the st
 .
 .
 .
-\item Buffer layer
 
-TBD
-\end{enumerate}
+\subsection{Naive model 2 } \label{NaiveModel}
+We model the problem in a kinematic approach, in which magnetic field is vanishingly small and have no feedback on the flow. All the variable depend on y only, so the partial derivative with respect to x and z will be zero - the problem now is essentially one-dimensional. We let velocity field as a gaussian function centered at 0, $v_0$ is of order of  $10^3 m.s^{-1}$ and $\sigma_y$ is of order of $10^7 m$
+$$ \overrightarrow{v} = v_x(y)\overrightarrow{e_x} = v_0 e^{-\frac{y^2}{2{\sigma_y}^2}}\overrightarrow{e_x} $$ and  magnetic field is initially constant along y:   
+$$\overrightarrow{B}(t=0) = B_0 \overrightarrow{e_y}$$ 
+The induction equation now reads:
+\begin{align}
+  \frac{\partial B_x}{\partial t} &= \frac{\partial(v_x B_y)}{\partial y} + \eta{\frac{\partial^2 B_x}{\partial^2 y}} \label{B_x}\\ 
+\frac{\partial B_y}{\partial t}  &=    \eta{\frac{\partial^2 B_y}{\partial^2 y}} \label{B_y} \\
+\frac{\partial B_z}{\partial t}  &=  \eta{\frac{\partial^2 B_x}{\partial^2 y}} \label{B_z}
+\end{align}
+From Eq. \ref{B_y} and Eq. \ref{B_z}, $B_y$ and $B_z$ would remain unchanged. So, $B_y = B_0$ and $B_x = 0$, which leaves us Eq. \ref{B_x}, we consider the problem in steady state:
+\begin{align}
+\frac{\partial(v_x B_y)}{\partial y} + \eta{\frac{\partial^2 B_x}{\partial^2 y}} &= 0 \\
+\Longrightarrow v_x B_y + \eta{\frac{\partial B_x}{\partial y}} &= const
+\end{align}
+Because of the problem symmetry, $B_x(y=0) = 0$.
+\begin{align}
+\Longrightarrow \frac{\partial B_x}{\partial y} &= -\frac{B_0}{\eta} v_x  = -\frac{B_0}{\eta}v_0 e^{-\frac{y^2}{2{\sigma_y}^2}} \\
+\Longrightarrow B_x &= -\frac{B_0 v_0}{\eta} \int_0^y e^{-\frac{y^2}{2{\sigma_y}^2}} dy \\
+\Longrightarrow B_x &= -\frac{\sqrt{2} B_0 v_0 \sigma_y}{\eta} erf(\frac{y}{\sqrt{2}\sigma_y})
+\end{align}
+This naive model assumes diffusion dominates advection, namely diffusion timescale, which is of $\frac{l_y^2}{\eta} \ s$,  is much smaller than the advection time scale, which is of $\frac{l_y}{v_y} \ s$. Therefore, the above model is only valid when $\eta \geq v_y l_y$, namely $\eta \geq 10^{10}$. However, high $\eta$ will significantly prolong the computation time due to numerical reason, we can only choose the lower value $\eta$ to be $10^{10}$ for testing this model (see. Sect )    
+
 
 \section{Results}
+Two cases are studied here: a "linear model" with vanishingly small magnetic field for which the inital $B_y \approx 10^{10} G$  and a model with strong field for which initial $B_y \approx 5G $.
+We ran 
+\subsection{Diffusion regime} 
 
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.49]{images/Vy_XYaverage.png}
+\includegraphics[scale=0.49]{images/Bx_XYcut_e10.png}
+\caption{as}
+\label{FlowEta10}
+\end{center}
+\end{figure}
 
+We ran the simulation with small initial magnetic field and large diffusitivity, $\eta = 10^{10}$.
+
+With this value of $\eta$, following the argument made in sect. \ref{NaiveModel}, advection timescale and diffusion timescale are actually comparable. So this is not entirely in a diffusion regime, advection still have a considerable effect on $B_x$. The figure \ref{FlowEta10} shows an agreement between the flow ($v_y$) and $B_x$. $V_y$ pushes $B_x$ away from the equator, which creates a distinct spade-like pattern. However,in the region around the line of longitude of $x = -2.6 \times 10^{8} m $, the magnitude of $v_y$ is one order smaller and diffusion thus dominates, which makes it suitable for testing our simple modeL.
+
+\subsection{Advection regime}
 In figure 1 and figure 2 show an agreement between $v_y$ and $B_x$, which indicates the strong effect of the advection on the magnetic field. At the first look, the longitudinal velocity seems to bring $B_x$ to where it halts. But when we look closer at contribution of each term in equation (6), we see that the source - the stretching term at the side is actually stronger than the source in the middle. Interestingly, the two sources in the middle reverses side,which can be considered as two effective sinks at each side. The reason for this is the accumulation of $B_y$ at the side due to the stretching of $B_x$ by $v_y$ (image..). These great deviation from the initial source is one major drawback of the naive model, in which $B_y$ is constant. Nevertheless, it creates a sink at each side to balance with strong sources there, which render the system into a steady state. 	
 The naive model assumes that the diffusive timescale is much shorter than the advective timescale while in fact, the reverse is true. Diffusion time $\frac{l_y^2}{\eta} \approx 10^8 s $  is much longer than advection time $ \frac{l_y}{v_y} \approx 10^6 s$ on average . Pic(y) show that advection terms dominate over diffusion term and goes on par with source term, which.... On z axis, the pattern of magnetic field is generally homogeneous due to the short diffusive timescale ($\frac{l_z^2}{\eta} \approx 10^6 s $ , namely any accumulation will be quickly averaged out vertically. (image ..)
 
 
 %Figure (2) shows the effect of the advection ($v_y$) to $B_x$. The flow pushes magnetic field  aside, which diffuses downward simultaneously. 
-\begin{figure}
-\includegraphics[scale=0.49, width=0.49\textwidth]{vy_XYcut.png}
-\includegraphics[scale=0.49, width=0.49\textwidth]{Bx_XYcut}
-\caption{ XY-cut at the top of the domain of $v_y$ (left panel) and  $B_x$ (right panel). The snapshot is taken at t = 200 days. }
-\end{figure}
+%\begin{figure}
+%\includegraphics[scale=0.49, width=0.49\textwidth]{vy_XYcut.png}
+%\includegraphics[scale=0.49, width=0.49\textwidth]{Bx_XYcut}
+%\caption{ XY-cut at the top of the domain of $v_y$ (left panel) and  $B_x$ (right panel). The snapshot is taken at t = 200 days. }
+%\end{figure}
+%
+%In figure 1 and figure 2 show an agreement between $v_y$ and $B_x$, which indicates the strong effect of the addvection on the magnetic field. 
+%
+%\begin{figure}
+%\includegraphics[scale=0.49, width=0.49\textwidth]{vy_YZcut}
+%\includegraphics[scale=0.49, width=0.49\textwidth]{Bx_average_YZ}
+%\caption{ YZ-cut of $v_y$ (left panel) and zonal mean $B_x$ (right panel). The snapshot is taken at t = 200 days. }
+%\end{figure}
+%
+\section{Discussion}
+\subsection{D1}
+\subsection{D2}
 
-In figure 1 and figure 2 show an agreement between $v_y$ and $B_x$, which indicates the strong effect of the addvection on the magnetic field. 
-
-\begin{figure}
-\includegraphics[scale=0.49, width=0.49\textwidth]{vy_YZcut}
-\includegraphics[scale=0.49, width=0.49\textwidth]{Bx_average_YZ}
-\caption{ YZ-cut of $v_y$ (left panel) and zonal mean $B_x$ (right panel). The snapshot is taken at t = 200 days. }
-\end{figure}
-
+\bibliography{reference}
 
 \end{document}
 
