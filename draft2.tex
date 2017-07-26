@@ -6,7 +6,8 @@
 \usepackage{physics}
 \usepackage{bm}
 \usepackage{natbib}
-\usepackage{float}
+\usepackage{subcaption}
+
 \begin{document}
 \bibliographystyle{apalike}
 
@@ -116,8 +117,9 @@ Lorentz force: TBD
 \subsection{Naive models}
 
 If one component of magnetic field is  considered, we have:
-\begin{equation}
+\begin{equation} 
 \frac{\partial B_x}{\partial t} + \bm{\nabla_{\bot} \cdot}(\bm{v}_{\bot}B_x)   = \bm{\nabla_{\bot} \cdot}(\bm{B}_{\bot}v_x) + \eta \bm{{\nabla}} ^2 B_x
+\label{eq:ind}
 \end{equation}
 where $\bm{v}_{\bot} = <v_y \ ; \ v_z>$, $ \bm{B}_{\bot} = <B_y \ ; \ B_z>$ and $\bm{\nabla_{\bot}}= <\frac{\partial}{\partial y} \ ;  \frac{\partial}{\partial y} > \ $. From equation (6), we can have 2 further remarks. First, only the flow perpendicular to the field can move it. And second, source of magnetic field is the combination of the shear of the flow that is in the same direction with it and the magnetic field that is perpendicular to it. The two observations are actually from the same thing, which is obvious if we imagine the magnetic field line like a straight rubber band and the flow, if present and perpendicular to it, will stretch the rubber band along its direction and magnetic field in this direction will be created.
 
@@ -178,49 +180,114 @@ Because of the problem symmetry, $B_x(y=0) = 0$.
 \begin{align}
 \Longrightarrow \frac{\partial B_x}{\partial y} &= -\frac{B_0}{\eta} v_x  = -\frac{B_0}{\eta}v_0 e^{-\frac{y^2}{2{\sigma_y}^2}} \\
 \Longrightarrow B_x &= -\frac{B_0 v_0}{\eta} \int_0^y e^{-\frac{y^2}{2{\sigma_y}^2}} dy \\
-\Longrightarrow B_x &= -\frac{\sqrt{2} B_0 v_0 \sigma_y}{\eta} erf(\frac{y}{\sqrt{2}\sigma_y})
+\Longrightarrow B_x &= -\frac{\sqrt{2} B_0 v_0 \sigma_y}{\eta} erf(\frac{y}{\sqrt{2}\sigma_y}) \label{AnaBx}
 \end{align}
-This naive model assumes diffusion dominates advection, namely diffusion timescale, which is of $\frac{l_y^2}{\eta} \ s$,  is much smaller than the advection time scale, which is of $\frac{l_y}{v_y} \ s$. Therefore, the above model is only valid when $\eta \geq v_y l_y$, namely $\eta \geq 10^{10}$. However, high $\eta$ will significantly prolong the computation time due to numerical reason, we can only choose the lower value $\eta$ to be $10^{10}$ for testing this model (see. Sect )    
+This naive model assumes diffusion dominates advection, namely diffusion timescale, which is of $\frac{l_y^2}{\eta} \ s$,  is much smaller than the advection time scale, which is of $\frac{l_y}{v_y} \ s$. Therefore, the above model is only valid when it is in diffusion regime - $\eta \gg v_y l_y$, namely $\eta \gg 10^{10}$. On the contrary, if $\eta \ll 10^{10}$, the simulation will be in advection regime in y direction and this model will cease to work. However, high $\eta$ will significantly prolong the computation time due to numerical reason, we can only choose the lower value $\eta$ to be $10^{10}$ for testing this model. Despite the limit, we still produce satisfactory results by considering the segment where diffusion dominates.(see. Sect \ref{diffusionRegime})
 
+Equation (\ref{AnaBx}) implies 3 main remarks. First, $ B_x$  resembles error function, whose scale resulted from the width of the zonal jet. Second, the value $B_x$ positively correlates with the strength $v_{0}$ and size $\sigma_y$ of the zet - its source and negatively relates with the diffusitivity, which together bring it to reconection - its sink. Third, the strength of $B_x$ results from the balance with said source and sink, which can be estimated. $ \sigma_y$ is of order of $10^7 m$, $v_{0} \approx \times 10^3 m \ \cdot s^{-1}$ and if $\eta = 10^{10} \ m^2\cdot s^{-1} $, $B_x$ will be one order of magnitude larger than the pre-imposed $B_y$ when it reaches steady state. Fig. (\ref{fig:anaBx}) shows the plot of Eq. \ref{AnaBx}. 
 
 \section{Results}
-Two cases are studied here: a "linear model" with vanishingly small magnetic field for which the inital $B_y \approx 10^{10} G$  and a model with strong field for which initial $B_y \approx 5G $.
-We ran 
-\subsection{Diffusion regime} 
+Two cases are studied here: a "linear model" with vanishingly small magnetic field for which the inital $B_y = 10^{-10} G$, that has negligible feedback on the flow and a model with strong field for which initial $B_y \approx 5G $, that affects the flow considerably. In the former, we examined the problem in advection regime($\eta = 10^8  m^2\cdot s^{-1}$ and in "quasi-diffusion" regime($\eta = 10^{10}$. It should be remarked that in vertical direction, with said value of $\eta$, diffusion timescale is so short and $B_x$ is quickly diffused evenly that the structure of $B_x$ remains almost unchanged with height. Therefore, in the region deep down in the atmosphere (pressure is of $100$ bars) where zonal flow cannot reach, magnetic field as strong as that of the top can still be observed.
+\subsection{Small magnetic field with $ \boldsymbol{\eta} = \boldsymbol{10^{10}} \ \boldsymbol{m^2 \cdot s^{-1}}$}    \label{diffusionRegime}
 
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=0.49]{images/Vy_XYaverage.png}
-\includegraphics[scale=0.49]{images/Bx_XYcut_e10.png}
-\caption{as}
-\label{FlowEta10}
-\end{center}
+\begin{figure}
+\begin{subfigure}{0.49\textwidth}
+	\centering
+	\includegraphics[width=\linewidth]{images/Bx_XYcut_e10.png}
+	\caption{$\eta = 10^{10}$}
+	\label{fig:Bx10}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+	\centering
+	\includegraphics[width=\linewidth]{images/bx_05e7_500.png}
+	\caption{$\eta = 10^8$}
+	\label{fig:Bx8}
+\end{subfigure}
+\label{fig:Bx}
+\caption{Z-averaged of $B_x$ in which $\eta=10^{10}$ (\ref{fig:Bx10}) and $\eta=10^{8}$ (\ref{fig:Bx8}). The snapshot is taken at 127 days and 500 days respectively.}
 \end{figure}
 
-We ran the simulation with small initial magnetic field and large diffusitivity, $\eta = 10^{10}$.
+\begin{figure}
+\centering
+\begin{subfigure}{0.49\textwidth}
+\centering
+\includegraphics[width=\textwidth]{images/Bx_z1.png}
+\caption{numerical $B_x$}
+\label{fig:numBx}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
+\centering
+\includegraphics[ width=\textwidth , height = 6.1 cm  ]{images/Bx_ana.png}
+\caption{analytical $B_x$}
+\label{fig:anaBx}
+\end{subfigure}
 
-With this value of $\eta$, following the argument made in sect. \ref{NaiveModel}, advection timescale and diffusion timescale are actually comparable. So this is not entirely in a diffusion regime, advection still have a considerable effect on $B_x$. The figure \ref{FlowEta10} shows an agreement between the flow ($v_y$) and $B_x$. $V_y$ pushes $B_x$ away from the equator, which creates a distinct spade-like pattern. However,in the region around the line of longitude of $x = -2.6 \times 10^{8} m $, the magnitude of $v_y$ is one order smaller and diffusion thus dominates, which makes it suitable for testing our simple modeL.
-
-\subsection{Advection regime}
-In figure 1 and figure 2 show an agreement between $v_y$ and $B_x$, which indicates the strong effect of the advection on the magnetic field. At the first look, the longitudinal velocity seems to bring $B_x$ to where it halts. But when we look closer at contribution of each term in equation (6), we see that the source - the stretching term at the side is actually stronger than the source in the middle. Interestingly, the two sources in the middle reverses side,which can be considered as two effective sinks at each side. The reason for this is the accumulation of $B_y$ at the side due to the stretching of $B_x$ by $v_y$ (image..). These great deviation from the initial source is one major drawback of the naive model, in which $B_y$ is constant. Nevertheless, it creates a sink at each side to balance with strong sources there, which render the system into a steady state. 	
-The naive model assumes that the diffusive timescale is much shorter than the advective timescale while in fact, the reverse is true. Diffusion time $\frac{l_y^2}{\eta} \approx 10^8 s $  is much longer than advection time $ \frac{l_y}{v_y} \approx 10^6 s$ on average . Pic(y) show that advection terms dominate over diffusion term and goes on par with source term, which.... On z axis, the pattern of magnetic field is generally homogeneous due to the short diffusive timescale ($\frac{l_z^2}{\eta} \approx 10^6 s $ , namely any accumulation will be quickly averaged out vertically. (image ..)
+\caption{Z-averaged of $B_x$ (in G) at line of longitude of $x = -2.4 \times 10^8 m$ in which $\eta=10^{10}$ (\ref{fig:numBx}) and analytical solution from the simple model (\ref{fig:anaBx}). The snapshot is taken at t = 127 days. }
+\label{fig:Bx_z1}
+\end{figure}
 
 
-%Figure (2) shows the effect of the advection ($v_y$) to $B_x$. The flow pushes magnetic field  aside, which diffuses downward simultaneously. 
+We ran the simulation with small initial magnetic field and large diffusitivity, $\eta = 10^{10} \ m^2\cdot s^{-1} $. With this value of $\eta$, following the argument made in sect. \ref{NaiveModel}, advection timescale and diffusion timescale are actually comparable. So this is not entirely in a diffusion regime, advection still have a considerable effect on $B_x$. The figure \ref{fig:Bx10} and figure (?) shows an agreement between the flow ($v_y$) and $B_x$. $V_y$ pushes $B_x$ away from the equator, which creates a distinct spade-like pattern. However,in the region around the line of longitude of $x = -2.4 \times 10^{8} m $, the magnitude of $v_y$ is one order smaller and diffusion thus dominates, which makes it suitable for testing our simple model. Figure \ref{fig:Bx_z1} show the agreement of $B_x$ between the simple model and the simulation. $B_x$ will be diffused away from the equator until the equilibrium is established by reconection. Apart from the small deviation due to advection that the naive model fails to capture, the analytical solution generally follows the numerical $B_x$. Besides, $B_x$ is 1 order larger than $B_0$ as expected.
+\label{sec:eta10}
+\subsection{Small magnetic field with $ \boldsymbol{\eta} = \boldsymbol{10^{8}} \ \boldsymbol{m^2 \cdot s^{-1}}$} 
+
+\begin{figure}
+\begin{subfigure}{0.49\textwidth}
+	\centering
+	\includegraphics[width=\linewidth]{images/compare_YZaver_100_lg.png}
+	\caption{$t = 100\ days$}
+	\label{fig:Compare_t100}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+	\centering
+	\includegraphics[width=\linewidth]{images/compare_YZaver_500_lg.png}
+	\caption{$t = 500\ days$}
+	\label{fig:Compare_t500}
+\end{subfigure}
+\caption{Zonally and vertically averaged of each term in equation \ref{eq:ind} initially (\ref{fig:Compare_t100}) and in steady state (\ref{fig:Compare_t500}). The snapshot is taken at 100 days and 500 days respectively.}
+\label{fig:Compare}
+\end{figure}
+  
+We ran this simulation with small magnetic field and small diffusitivity - $\eta = 10^{8} \ m^2 \cdot s^{-1}$. In y direction, following the argument of order made in section \ref{NaiveModel}, this case is in advection regime, namely the flow dictates the structure of $B_x$ horizontally. 
+
+Figure (\ref{fig:Bx8}) and figure (?) show the strong correlation between $B_x$ and $v_y$, which is the evidence for the strong effect of the advection on the magnetic field. The longitudinal velocity seems to bring $B_x$ to where it halts. But upon closer inspection at contribution of each term in eq. (\ref{eq:ind}) in figure(\ref{fig:Compare}), especially when it reaches steady state, we see that the source - the stretching terms at the sides are actually stronger than the source in the middle. And the source in the middle interestingly reverses side. Nevertheless, because of the strong longitude-dependence of the variables, xy-plot should be refered. 
+
+Figure (\ref{fig:By}) depitcts $B_y$ in steady state, which is developed at the sides due to the stretching of $B_x$ by $v_y$. The pattern of $B_y$ creates the parities of adjoining source-sink (figure \ref{fig:source500}) Advection helps to bring these to reconnection, which renders the system into steady state figure(\ref{fig:advect}). So, contrary to the high $\eta$ case (sect. \ref{sec:eta10}), in which diffusion is the driving force, advection is apparently the one in this case.
+\begin{figure}
+\begin{subfigure}{0.49\textwidth}
+	\centering
+	\includegraphics[width=\linewidth]{images/by_05e7_500.png}
+	\caption{}
+	\label{fig:By}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+	\centering
+	\includegraphics[width=\linewidth]{images/advect_aver_500.png}
+	\caption{}
+	\label{fig:advect}
+\end{subfigure}
+
+\begin{subfigure}{0.49\textwidth}
+	\centering
+	\includegraphics[width=\linewidth]{images/source_aver_100.png}
+	\caption{}
+	\label{fig:source100}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+	\centering
+	\includegraphics[width=\linewidth]{images/source_aver_500.png}
+	\caption{}
+	\label{fig:source500}
+\end{subfigure}
+\caption{Color contour plots show the vertically-averaged of the variables: $B_y$ in G (\ref{fig:By}); advection term in in G/s (\ref{fig:advect}); source term in G/s (\ref{fig:source100},\ref{fig:source500}. The snapshot is taken initially at 100 days (c) and in steady state at 500 days(a,b,d).}
+\label{fig:Misc}
+\end{figure}
+%
 %\begin{figure}
-%\includegraphics[scale=0.49, width=0.49\textwidth]{vy_XYcut.png}
-%\includegraphics[scale=0.49, width=0.49\textwidth]{Bx_XYcut}
-%\caption{ XY-cut at the top of the domain of $v_y$ (left panel) and  $B_x$ (right panel). The snapshot is taken at t = 200 days. }
-%\end{figure}
-%
-%In figure 1 and figure 2 show an agreement between $v_y$ and $B_x$, which indicates the strong effect of the addvection on the magnetic field. 
-%
-%\begin{figure}
-%\includegraphics[scale=0.49, width=0.49\textwidth]{vy_YZcut}
-%\includegraphics[scale=0.49, width=0.49\textwidth]{Bx_average_YZ}
-%\caption{ YZ-cut of $v_y$ (left panel) and zonal mean $B_x$ (right panel). The snapshot is taken at t = 200 days. }
-%\end{figure}
-%
+%\centering
+%\begin{subfigure}
+%\includegraphics[scale=•]{•}
+
 \section{Discussion}
 \subsection{D1}
 \subsection{D2}
